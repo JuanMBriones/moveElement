@@ -1,6 +1,5 @@
 <html>
  <head>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <script type="application/javascript">
     function draw() {
       var canvas = document.getElementById("canvas");
@@ -30,35 +29,22 @@
 
     
   </script>
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
  </head>
  <body onload="draw();">
-    <button id="right">Right</button>
-    <button id="left">Left</button>
-    <button>Up</button>
-    <button>Down</button>
-    <div>
-      <canvas id="canvas" width="500" height="500" style="background-color: #333031;"></canvas>
-    </div>
-    <div id="virgil">
-      <p>H</p>
-    </div>
-
-    <script>
-      var $container = $("#virgil");
-    var widthOfContainer = 300;//$container.width();
-    console.log($container.width());
-    var $table = $("#virgil");
-    $("#right").on("click", function (e) {
-      $table.animate({
-          left: "-=" + widthOfContainer
-      }, 300);
-    });
-    $("#left").on("click", function (e) {
-      $table.animate({
-          left: "+=" + widthOfContainer
-      }, 300);
-    });
-    </script>
+    <button id="left"><i class="arrow left"></i></button>
+    <button id="right"><i class="arrow right"></i></button>
     
+    <button id="up"><i class="arrow up"></i></button>
+    <button id="down"><i class="arrow down"></i></button>
+    <div id="pane">
+      <div id="box">
+        <canvas id="canvas" width="500" height="500" style="background-color: #333031;"></canvas>
+      </div>
+    </div>
  </body>
+ <script src="js/scripts.js"></script>
 </html>
