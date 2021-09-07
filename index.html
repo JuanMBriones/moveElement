@@ -1,0 +1,64 @@
+<html>
+ <head>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+        //ctx.style.backgroundColor = '#333031'
+        
+        // Head
+        ctx.beginPath();
+        ctx.arc (250,250,220,0,Math.PI*2,true);
+        ctx.fillStyle = "rgb(92, 127, 84)";
+        ctx.fill();
+
+        // Left eye
+        ctx.beginPath();
+        ctx.arc (160,240,60,0,Math.PI,false);
+        ctx.fillStyle = "rgb(255, 255,255)";
+        ctx.fill();
+
+        // Right eye
+        ctx.beginPath();
+        ctx.arc (340,240,60,0,Math.PI,false);
+        ctx.fillStyle = "rgb(255, 255,255)";
+        ctx.fill();
+      }
+    }
+
+    
+  </script>
+ </head>
+ <body onload="draw();">
+    <button id="right">Right</button>
+    <button id="left">Left</button>
+    <button>Up</button>
+    <button>Down</button>
+    <div>
+      <canvas id="canvas" width="500" height="500" style="background-color: #333031;"></canvas>
+    </div>
+    <div id="virgil">
+      <p>H</p>
+    </div>
+
+    <script>
+      var $container = $("#virgil");
+    var widthOfContainer = 300;//$container.width();
+    console.log($container.width());
+    var $table = $("#virgil");
+    $("#right").on("click", function (e) {
+      $table.animate({
+          left: "-=" + widthOfContainer
+      }, 300);
+    });
+    $("#left").on("click", function (e) {
+      $table.animate({
+          left: "+=" + widthOfContainer
+      }, 300);
+    });
+    </script>
+    
+ </body>
+</html>
